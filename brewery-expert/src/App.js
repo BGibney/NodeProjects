@@ -11,16 +11,18 @@ class App extends Component {
       defaultColor: 'amber',
       beers: [{
         color: 'amber',
-        name: 'Jack Amber'
+        name: 'Jack Amber',
+        key: 1
       }, {
         color: 'dark',
-        name: 'Gout Stout'
+        name: 'Gout Stout',
+        key: 2
       }]
     };
   }
     formSubmitted(event) {
       event.preventDefault();
-
+      
       this.setState({
         beerSelection: event.target.value
       });
@@ -36,8 +38,10 @@ class App extends Component {
     render() {
       return (
         
+      
       <div className="App">
-        
+      <h1>Brewery Expert</h1>
+      
       <BeerSelectForm 
         formSubmitted={this.formSubmitted.bind(this)} 
         beerChanged={this.beerChanged.bind(this)} 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import BeerSelectForm from './components/BeerSelectForm';
+import BrewerySelectForm from './components/BrewerySelectForm';
 
 class App extends Component {
   constructor() {
@@ -10,13 +11,31 @@ class App extends Component {
       beerSelection: '',
       defaultColor: 'amber',
       beers: [{
+        key: 1,
         color: 'amber',
-        name: 'Jack Amber',
-        key: 1
+        name: 'Jack Amber'
+        
       }, {
+        key: 2,
         color: 'dark',
-        name: 'Gout Stout',
-        key: 2
+        name: 'Gout Stout'
+        
+      }],
+      breweries: [{
+        key: 1,
+        name: 'Soaring Ridge',
+        music: 'EDM/pop',
+        weight: 0
+      }, {
+        key: 2,
+        name: 'Chaos Mountain Brewery',
+        music: 'Folk/country',
+        weight: 0
+      },{
+        key: 3,
+        name: 'Martin\'s',
+        music: 'Rock/metal',
+        weight: 0
       }]
     };
   }
@@ -48,7 +67,9 @@ class App extends Component {
         defaultColor={this.defaultColor} 
         beers={this.state.beers}
       />
-
+      <BrewerySelectForm
+        breweries={this.state.breweries}
+      />
 
     </div>);
     }
